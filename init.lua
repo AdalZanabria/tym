@@ -1,10 +1,5 @@
 -- Catppuccin tym theme
-
--- Change the following flavour variable to the color scheme of your choice
--- Available options "latte", "frappe", "macchiato", "mocha".
-local flavour = "mocha"
-
-local colours = {
+local catppuccin = {
   latte = {
     rosewater = '#DC8A78',
     red = '#D20F39',
@@ -67,36 +62,32 @@ local colours = {
   },
 }
 
-local catppuccin = {}
-
-function catppuccin.select(palette)
+return function (palette)
   local isLatte = palette == "latte"
   return {
-    color_background           = colours[palette].base,
-    color_foreground           = colours[palette].text,
-    color_window_background    = colours[palette].base,
-    color_bold                 = colours[palette].text,
-    color_cursor               = colours[palette].rosewater,
-    color_cursor_foreground    = colours[palette].base,
-    color_highlight            = colours[palette].rosewater,
-    color_highlight_foreground = colours[palette].base,
-    color_0                    = isLatte and colours[palette].subtext1 or colours[palette].surface1, -- black (background)
-    color_1                    = colours[palette].red, -- red
-    color_2                    = colours[palette].green, -- green
-    color_3                    = colours[palette].yellow, -- brown
-    color_4                    = colours[palette].blue, -- blue
-    color_5                    = colours[palette].pink, -- purple
-    color_6                    = colours[palette].teal, -- cyan
-    color_7                    = isLatte and colours[palette].surface2 or colours[palette].subtext1, -- light gray (foreground)
-    color_8                    = isLatte and colours[palette].subtext0 or colours[palette].surface2, -- gray
-    color_9                    = colours[palette].red, -- light red
-    color_10                   = colours[palette].green, -- light green
-    color_11                   = colours[palette].yellow, -- yellow
-    color_12                   = colours[palette].blue, -- light blue
-    color_13                   = colours[palette].pink, -- pink
-    color_14                   = colours[palette].teal, -- light cyan
-    color_15                   = isLatte and colours[palette].surface1 or colours[palette].subtext0, -- white
+    color_background           = catppuccin[palette].base,
+    color_foreground           = catppuccin[palette].text,
+    color_window_background    = catppuccin[palette].base,
+    color_bold                 = catppuccin[palette].text,
+    color_cursor               = catppuccin[palette].rosewater,
+    color_cursor_foreground    = catppuccin[palette].base,
+    color_highlight            = catppuccin[palette].rosewater,
+    color_highlight_foreground = catppuccin[palette].base,
+    color_0                    = isLatte and catppuccin[palette].subtext1 or catppuccin[palette].surface1, -- black (background)
+    color_1                    = catppuccin[palette].red, -- red
+    color_2                    = catppuccin[palette].green, -- green
+    color_3                    = catppuccin[palette].yellow, -- brown
+    color_4                    = catppuccin[palette].blue, -- blue
+    color_5                    = catppuccin[palette].pink, -- purple
+    color_6                    = catppuccin[palette].teal, -- cyan
+    color_7                    = isLatte and catppuccin[palette].surface2 or catppuccin[palette].subtext1, -- light gray (foreground)
+    color_8                    = isLatte and catppuccin[palette].subtext0 or catppuccin[palette].surface2, -- gray
+    color_9                    = catppuccin[palette].red, -- light red
+    color_10                   = catppuccin[palette].green, -- light green
+    color_11                   = catppuccin[palette].yellow, -- yellow
+    color_12                   = catppuccin[palette].blue, -- light blue
+    color_13                   = catppuccin[palette].pink, -- pink
+    color_14                   = catppuccin[palette].teal, -- light cyan
+    color_15                   = isLatte and catppuccin[palette].surface1 or catppuccin[palette].subtext0, -- white
   }
 end
-
-return catppuccin
