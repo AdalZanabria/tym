@@ -17,22 +17,16 @@
 
 ## Usage
 
-1. Clone this repository.
-2. Move to the clonned directory.
-3. Copy the `theme.lua` file into `.config/tym`
-```bash
-  git clone https://github.com/catppuccin/tym.git && cp tym/theme.lua ~/.config/tym
-```
-4. To select a flavour, edit the `flavour` variable at the start of `theme.lua`, default is "mocha", but other available options are "latte", "frappe" or "macchiato".
+1. Run the following command:
+  ```bash
+  git clone https://github.com/catppuccin/tym.git ~/.config/tym/catppuccin && cp ~/.config/tym/catppuccin/theme.lua ~/.config/tym
+  ```
+  It will clone the repository and copy the appropiate files, if a `.config/tym` directory doesn't exist, it will be created.
+
+2. To select a flavour, edit the `flavour` variable at the start of `~/.config/tym/catppuccin/init.lua`, default is "mocha", but other available options are "latte", "frappe" or "macchiato".
 ```lua
   local flavour = "mocha"
 ```
-
-## 🙋 FAQ
-
--	Q: **_"I copied and pasted the installation command but I get an error!"_**
-    - A: Make sure you have a tym directory in `.config` or create one with ```mkdir ~/.config/tym```
-
 
 ## 💝 Thanks to
 
