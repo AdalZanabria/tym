@@ -1,9 +1,4 @@
 -- Catppuccin tym theme
-
--- Change the following flavour variable to the color scheme of your choice
--- Available options "latte", "frappe", "macchiato", "mocha".
-local flavour = "mocha"
-
 local catppuccin = {
   latte = {
     rosewater = '#DC8A78',
@@ -67,7 +62,7 @@ local catppuccin = {
   },
 }
 
-function catppuccin.select(palette)
+return function (palette)
   local isLatte = palette == "latte"
   return {
     color_background           = catppuccin[palette].base,
@@ -96,5 +91,3 @@ function catppuccin.select(palette)
     color_15                   = isLatte and catppuccin[palette].surface1 or catppuccin[palette].subtext0, -- white
   }
 end
-
-return catppuccin.select(flavour)
